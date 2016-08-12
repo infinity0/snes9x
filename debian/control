@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 5.0), automake, autotools-dev, intltool (>= 0.37.0)
 
 Package: snes9x-gtk
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Conflicts: snes9x-common, snes9x-server, snes9x-fx, snes9x-svga, snes9x-opengl, snes9x-x
 Description: A GTK port of the popular Snes9x Super Nintendo emulator
  http://code.google.com/p/snes9x-gtk/
