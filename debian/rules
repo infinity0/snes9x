@@ -15,7 +15,7 @@ DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 
-config.status: 
+gtk/config.status:
 	dh_testdir
 	cd gtk && ./autogen.sh
 	# Add here commands to configure the package.
@@ -28,7 +28,7 @@ endif
 	cd gtk && ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --bindir=\$${prefix}/games --mandir=\$${prefix}/share/man CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,--as-needed" --with-opengl --with-joystick --with-netplay
 
 
-build: config.status
+build: gtk/config.status
 	dh_testdir
 
 	# Add here commands to compile the package.
@@ -92,4 +92,4 @@ binary-arch: build install
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary
+.PHONY: clean binary-indep binary-arch binary
