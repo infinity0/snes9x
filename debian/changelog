@@ -1,7 +1,12 @@
+snes9x-gtk (1:1.53.81-2) UNRELEASED; urgency=medium
+
+  * Rebuild against Debian unstable.
+  * Tidy up the build scripts a bit.
+
+ -- Ximin Luo <infinity0@debian.org>  Fri, 12 Aug 2016 19:16:55 +0200
+
 snes9x-gtk (1:1.53.81-1~raring1) raring; urgency=low
 
-
    * Upstream release.
-
 
  -- Brandon Wright <bearoso@gmail.com>  Tue, 30 Apr 2013 18:20:01 -0500

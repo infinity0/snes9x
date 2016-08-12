@@ -17,6 +17,7 @@ DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 config.status: 
 	dh_testdir
+	cd gtk && ./autogen.sh
 	# Add here commands to configure the package.
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
 	cp -f /usr/share/misc/config.sub config.sub
@@ -38,10 +39,10 @@ build: config.status
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp 
+	rm -f build
 
 	# Add here commands to clean up after the build process.
-	[ ! -f Makefile ] || $(MAKE) distclean
+	cd gtk; [ ! -f Makefile ] || $(MAKE) maintainer-clean
 	rm -f config.sub config.guess
 
 	dh_clean
